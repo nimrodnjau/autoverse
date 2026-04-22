@@ -24,8 +24,7 @@ db.init_app(app)
 jwt = JWTManager(app)
 CORS(app, origins=[
     'http://localhost:5173',
-    'http://127.0.0.1:5173',
-    'https://autoverse-kenya.vercel.app',  # updating this after Vercel deployment
+    'https://autoverse-roan.vercel.app/',
     'https://*.vercel.app',  # allows all Vercel preview URLs
 ])
 
@@ -46,7 +45,9 @@ def home():
 @app.route("/seed")
 def seed():
     from seed import run_seed
+
     run_seed()
+    
     return "Seeded successfully"
 
 
