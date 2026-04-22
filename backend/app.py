@@ -43,6 +43,13 @@ app.register_blueprint(payments_bp, url_prefix='/api/payments')
 def home():
     return "🚀 Autoverse API is running"
 
+@app.route("/seed")
+def seed():
+    from seed import run_seed
+    run_seed()
+    return "Seeded successfully"
+
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
