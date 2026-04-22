@@ -24,8 +24,8 @@ db.init_app(app)
 jwt = JWTManager(app)
 CORS(app, origins=[
     'http://localhost:5173',
+    'http://127.0.0.1:5173',
     'https://autoverse-roan.vercel.app/',
-    'https://*.vercel.app',  # allows all Vercel preview URLs
 ])
 
 from routes.auth import auth_bp
