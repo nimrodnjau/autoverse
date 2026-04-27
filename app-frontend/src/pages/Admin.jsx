@@ -79,7 +79,7 @@ export default function Admin() {
         badge: form.badge || null,
       };
       if (editingCar) {
-        await api.post(`/cars/${editingCar.id}`, payload, true, "PUT");
+        await api.put(`/cars/${editingCar.id}`, payload, true);
         setSuccess("Car updated successfully!");
       } else {
         await api.post("/cars/", payload, true);
